@@ -15,7 +15,7 @@ minetest.register_node("mysheetmetal:fascia", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	selection_box = fascia_L_U,
-	groups = {choppy=2, oddly_breakable_by_hand=2, not_in_creative_inventory=1},
+	groups = {choppy=2, oddly_breakable_by_hand=2},
 	on_punch = function(pos, node, puncher, pointed_thing)
 		minetest.set_node({x = pos.x, y = pos.y, z = pos.z},{name = "mysheetmetal:fascia_L_L", param2=minetest.dir_to_facedir(puncher:get_look_dir())})
 	end

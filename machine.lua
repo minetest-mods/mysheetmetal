@@ -83,6 +83,8 @@ can_dig = function(pos,player)
 	local inv = meta:get_inventory()
 	if not inv:is_empty("ingot") then
 		return false
+	elseif not inv:is_empty("ingot2") then
+		return false
 	elseif not inv:is_empty("res") then
 		return false
 	end

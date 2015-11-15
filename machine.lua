@@ -73,7 +73,7 @@ minetest.register_node("mysheetmetal:machine", {
 	},
 
 	after_place_node = function(pos, placer)
-	local meta = minetest.env:get_meta(pos);
+	local meta = minetest.get_meta(pos);
 			meta:set_string("owner",  (placer:get_player_name() or ""));
 			meta:set_string("infotext",  "Eavestrough Machine is empty (owned by " .. (placer:get_player_name() or "") .. ")");
 		end,
@@ -92,7 +92,7 @@ can_dig = function(pos,player)
 end,
 
 on_construct = function(pos)
-	local meta = minetest.env:get_meta(pos)
+	local meta = minetest.get_meta(pos)
 	meta:set_string("formspec", "invsize[10,11;]"..
 		"background[-0.15,-0.25;10.40,11.75;mysheetmetal_background.png]"..
 		"label[3,5;Steel Ingot:]"..
@@ -128,7 +128,7 @@ on_construct = function(pos)
 end,
 
 on_receive_fields = function(pos, formname, fields, sender)
-	local meta = minetest.env:get_meta(pos)
+	local meta = minetest.get_meta(pos)
 	local inv = meta:get_inventory()
 --eaves trough
 if fields["et"] 

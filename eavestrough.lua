@@ -248,8 +248,17 @@ minetest.register_node("mysheetmetal:downspout_bottomw", {
 			{-0.125, -0.5, -0.125, 0.125, -0.3125, 0.5}, 
 		}
 	},
+after_place_node = function(pos, placer)
+local meta = minetest.get_meta(pos);
+	meta:set_string("owner",  (placer:get_player_name() or ""));
+
 	on_punch = function(pos, node, puncher, pointed_thing)
+		local owner = minetest.get_meta(pos).owner
+		if puncher == owner
 		minetest.set_node({x = pos.x, y = pos.y, z = pos.z},{name = "mysheetmetal:downspout_bottom", param2=minetest.dir_to_facedir(puncher:get_look_dir())})
+		else
+		return
+		end
 	end
 
 })

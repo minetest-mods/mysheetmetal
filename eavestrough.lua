@@ -254,7 +254,7 @@ local meta = minetest.get_meta(pos);
 
 	on_punch = function(pos, node, puncher, pointed_thing)
 		local owner = minetest.get_meta(pos).owner
-		if puncher == owner
+		if puncher == owner then
 		minetest.set_node({x = pos.x, y = pos.y, z = pos.z},{name = "mysheetmetal:downspout_bottom", param2=minetest.dir_to_facedir(puncher:get_look_dir())})
 		else
 		return

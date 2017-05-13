@@ -277,7 +277,7 @@ then
 			for i = 0, anzahl-1 do
 				give[i+1]=inv:add_item("res",shape)
 			end
-			if not minetest.setting_getbool("creative_mode") then
+			if not minetest.settings:get_bool("creative_mode") then
 				ingotstack:take_item()
 				ingotstack2:take_item()
 			end

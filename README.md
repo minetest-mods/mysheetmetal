@@ -1,7 +1,7 @@
 mysheetmetal
 ========
 
-Licence - DWYWPL.
+Licence - MIT.
 Created by Don
 Code for machine based off of Noncubic by yves_de_beck
 

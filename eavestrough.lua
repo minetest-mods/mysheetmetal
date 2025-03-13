@@ -217,7 +217,7 @@ minetest.register_node("mysheetmetal:downspout_bottomw", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {cracky=1, oddly_breakable_by_hand=1, not_in_creative_inventory=1},
-	drop = "eavestrough:downspout",
+	drop = "eavestrough:downspout_bottom",
 	node_box = {
 		type = "fixed",
 		fixed = {

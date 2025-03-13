@@ -250,7 +250,7 @@ minetest.register_node("mysheetmetal:downspout_bottomw", {
 	},
 
 	on_punch = function(pos, node, puncher, pointed_thing)
-		minetest.set_node(pos,{name = "mysheetmetal:downspout_bottom", param2=node.param2})
+		minetest.set_node(pos,{name = "mysheetmetal:downspout_bottomw", param2=node.param2})
 	end
 
 })

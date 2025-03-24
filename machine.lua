@@ -116,6 +116,8 @@ on_construct = function(pos)
 		"image_button[4.5,2.5;1,1;mysheetmetal_mach12.png;scocorner; ]"..
 		"label[0.5,3.5;Fascia]"..
 		"image_button[0.5,4;1,1;mysheetmetal_mach13.png;fascia; ]"..
+		"label[2,3.5;Drip Edge]"..
+		"image_button[2,4;1,1;mysheetmetal_mach14.png;dripedge; ]"..
 
 		"list[current_player;main;1,7;8,4;]")
 	meta:set_string("infotext", "Sheet Metal Machine")
@@ -144,6 +146,7 @@ or fields["scicorner"]
 or fields["scocorner"]
 
 or fields["fascia"]
+or fields["dripedge"]
 then
 
 	if fields["et"] then
@@ -258,6 +261,15 @@ then
 		make_ok = "0"
 		anzahl = "2"
 		shape = "mysheetmetal:fascia"
+		if inv:is_empty("ingot") then
+			return
+		end
+	end
+	
+		if fields["dripedge"] then
+		make_ok = "0"
+		anzahl = "2"
+		shape = "mysheetmetal:dripedge"
 		if inv:is_empty("ingot") then
 			return
 		end

@@ -31,6 +31,9 @@ minetest.register_node("mysheetmetal:soffit", {
 		}
 	},
 	on_place = minetest.rotate_node,
+		on_punch = function(pos, node, puncher, pointed_thing)
+		minetest.set_node({x = pos.x, y = pos.y, z = pos.z},{name = "mysheetmetal:dripedge_with_soffit", param2=node.param2})
+	end
 })
 
 minetest.register_node("mysheetmetal:soffit_corner", {
